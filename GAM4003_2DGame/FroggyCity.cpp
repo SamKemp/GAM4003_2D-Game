@@ -15,7 +15,7 @@ FroggyCity::~FroggyCity(void)
 
 void FroggyCity::setup()
 {
-
+	setBackground("images/FrogRoad.jpg");
 }
 
 void FroggyCity::logic()
