@@ -367,6 +367,8 @@ public:
 	float getY();
 	int getHeight();
 	int getWidth();
+	float getCenterX();
+	float getCenterY();
 	Uint32 getCurrentFrame();
 	void setCurrentFrame(Uint32 frameNumber);
 	float getXvelocity();
