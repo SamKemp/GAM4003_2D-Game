@@ -15,7 +15,14 @@ FroggyCity::~FroggyCity(void)
 
 void FroggyCity::setup()
 {
-	setBackground("images/FrogFace.png");
+	setBackground("images/grass.png");
+
+	for (int i = 0; i < NUM_ROAD; i++)
+	{
+		road[i].setImage("images/roads/roadEW.tga");
+		road[i].setWorldPosition(40, 40);
+		road[i].setVelocities(3.0f, 0.0f);
+	}
 }
 
 void FroggyCity::logic()
