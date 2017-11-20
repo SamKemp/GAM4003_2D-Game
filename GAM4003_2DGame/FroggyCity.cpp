@@ -55,9 +55,9 @@ void FroggyCity::setup()
 
 	for (int i = 0; i < NUM_FROG; i++) 
 	{
-		rndX = rnd.number(0,1820);
-		rndY = rnd.number(0,1000);
-		frog[i].setImage("images/FrogFace.png", 0.5);
+		rndX = rnd.number(0,width - (width / 30));
+		rndY = rnd.number((float)0,(height - Bar));
+		frog[i].setImage("images/FrogFace.png");
 		frog[i].setWorldPosition(rndX, rndY);
 		frog[i].setTransparentColour(0,0,0);
 
@@ -74,10 +74,14 @@ void FroggyCity::draw()
 	for (int i = 0; i < NUM_ROAD; i++)
 	{
 		road[i].updateEverything();
-		frog[i].updateEverything();
 		print(i, road[i].getCenterX(), road[i].getCenterY());
+	}
+
+	for (int i = 0; i < NUM_FROG; i++) {
+		frog[i].updateEverything();
 		print(i, frog[i].getCenterX(), frog[i].getCenterY());
 	}
+
     showStatus();
 }
 
