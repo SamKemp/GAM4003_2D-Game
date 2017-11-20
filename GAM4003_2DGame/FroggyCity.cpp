@@ -62,6 +62,26 @@ void FroggyCity::setup()
 		frog[i].setTransparentColour(0,0,0);
 
 	}
+	
+	for (int i = 0; i < NUM_BAR; i++)
+	{
+		bar[i].setImage("images/Bar2.png");
+		barLength = 0;
+		barLength = width /bar[i].getWidth();
+		if (i <= barLength)
+		{
+			bar[i].setWorldPosition((float)i*bar[i].getWidth(), (float)(height - BAR) - bar[i].getCenterY());
+			PREVbarLength = barLength;
+		}
+		else
+		{
+			barLength = width /bar[i].getWidth() + PREVbarLength + 1;
+			if (i <= barLength)
+			{
+				bar[i].setWorldPosition((float)(i-PREVbarLength -1)*bar[i].getWidth(), (float)(height - BAR + bar[i].getHeight()) - bar[i].getCenterY());
+			}
+		}
+	}
 }
 
 void FroggyCity::logic()
@@ -82,6 +102,12 @@ void FroggyCity::draw()
 		print(i, frog[i].getCenterX(), frog[i].getCenterY());
 	}
 
+	for (int i = 0; i < NUM_BAR; i++)
+	{
+		bar[i].updateEverything();
+		print(i, bar[i].getCenterX(), bar[i].getCenterY());
+	}
+	
     showStatus();
 }
 
