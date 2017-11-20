@@ -3,7 +3,7 @@
 #include "GameBase.h"
 
 const int NUM_ROAD = 50;
-const int NUM_FROG = 500;
+const int NUM_FROG = 100;
 const int NUM_BAR = 1000;
 
 
