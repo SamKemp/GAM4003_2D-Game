@@ -4,18 +4,32 @@
 
 FroggyCity::FroggyCity(void)
 {
+
 }
 
 
 FroggyCity::~FroggyCity(void)
 {
+    
 }
 
-void FroggyCity::setup() {
+void FroggyCity::setup()
+{
+
 }
 
-void FroggyCity::logic() {
+void FroggyCity::logic()
+{
+
 }
 
-void FroggyCity::draw() {
+void FroggyCity::draw()
+{
+
+    showStatus();
+}
+
+void FroggyCity::showStatus()
+{
+
 }
