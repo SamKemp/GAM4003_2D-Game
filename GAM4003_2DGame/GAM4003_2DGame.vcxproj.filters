@@ -327,6 +327,9 @@
     <ClInclude Include="SDL\UBSprite.h">
       <Filter>Header Files\framework\SDL</Filter>
     </ClInclude>
+    <ClInclude Include="FroggyCity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDL\audiomanager.cpp">
@@ -340,6 +343,12 @@
     </ClCompile>
     <ClCompile Include="SDL\UBSprite.cpp">
       <Filter>Source Files\framework\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="FroggyCity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainProg.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

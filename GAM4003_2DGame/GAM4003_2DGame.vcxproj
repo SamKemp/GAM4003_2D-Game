@@ -121,6 +121,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="FroggyCity.h" />
     <ClInclude Include="SDL\audiomanager.h" />
     <ClInclude Include="SDL\begin_code.h" />
     <ClInclude Include="SDL\close_code.h" />
@@ -223,6 +224,8 @@
     <ClInclude Include="SDL\Vector.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FroggyCity.cpp" />
+    <ClCompile Include="mainProg.cpp" />
     <ClCompile Include="SDL\audiomanager.cpp" />
     <ClCompile Include="SDL\GameBase.cpp" />
     <ClCompile Include="SDL\TrueTypeFont.cpp" />
