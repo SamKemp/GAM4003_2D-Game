@@ -1,5 +1,6 @@
 #include "GameBase.h"
 #include "TrueTypeFont.h"
+#include <windows.h>
 
 SDL_Surface* GameBase::screen_surface = NULL;
 SDL_Surface* GameBase::background_surface = NULL;
@@ -23,6 +24,12 @@ int GameBase::initSDL(int width, int height, bool fullscreen, string title){	//v
 	// So we have managed to initialise the SDL systems so make sure we
 	// uninitialise them when the program terminates
 	atexit(SDL_Quit);
+
+	if(fullscreen)
+	{
+		width = GetSystemMetrics(SM_CXSCREEN);
+		height = GetSystemMetrics(SM_CYSCREEN);
+	}
 
 //**************************************************	//v1.1 Based on lazyfoo.net SDL2 tutorials
 	window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
