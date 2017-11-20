@@ -2,7 +2,8 @@
 
 #include "GameBase.h"
 
-const int NUM_ROAD = 50;
+const int NUM_ROAD = 20;
+const int NUM_FROG = 20;
 
 
 class FroggyCity :
@@ -16,9 +17,10 @@ public:
 	void draw();
 	void showStatus();
 private:
-	float BAR;
+	float Bar;
 
 	UBSprite road[NUM_ROAD];
+	UBSprite frog[NUM_FROG];
 	float roadLength;
 	float PREVroadLength;
 };
