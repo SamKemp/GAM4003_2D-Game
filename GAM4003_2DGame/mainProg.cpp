@@ -6,7 +6,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
-	GameBase::initSDL(1840, 1000, "Froggy City Game");
+	GameBase::initSDL(1840, 1000, true, "Froggy City Game");
 
 	FroggyCity fc;
 

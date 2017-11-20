@@ -14,7 +14,7 @@ Initialise the SDL.
 SDL functions  return 0 on success and <0 for failure so do the same here.
 return 0 if successful
 */
-int GameBase::initSDL(int width, int height, string title){	//v1.1
+int GameBase::initSDL(int width, int height, bool fullscreen, string title){	//v1.1
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_AUDIO) != 0){
 		cout << "Unable to initialise SDL\n\nPROGRAM TERMINATED\n\n";
 		system("pause");
@@ -50,6 +50,11 @@ int GameBase::initSDL(int width, int height, string title){	//v1.1
 			if( TTF_Init() == -1 ) { //v1.2
 				printf( "SDL_ttf could not initialise! SDL_ttf Error: %s\n", TTF_GetError() ); 
 				return false; 
+			}
+
+			if(fullscreen)
+			{
+				SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN);
 			}
 		}
 	}

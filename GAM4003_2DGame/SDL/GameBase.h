@@ -170,7 +170,7 @@ public:
 	You can use the setBackground methods to change the background colour or
 	provide an image to use.
 	*/
-	static int initSDL(int width, int height, string title = "SDL Game");	//v1.1
+	static int initSDL(int width, int height, bool fullscreen, string title = "SDL Game");	//v1.1
 	bool addSound(char* filename, string name, int volDivider);
 
 	static SDL_Surface* screen_surface;	//v1.1
