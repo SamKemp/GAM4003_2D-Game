@@ -708,6 +708,16 @@ float UBSprite::getCenterY()
 	return getY() + (getHeight()/2);
 }
 
+float UBSprite::getFullX()
+{
+	return getX() + getWidth();
+}
+
+float UBSprite::getFullY()
+{
+	return getY() + getHeight();
+}
+
 Uint32 UBSprite::getCurrentFrame() {
 	return currentFrame;
 }
