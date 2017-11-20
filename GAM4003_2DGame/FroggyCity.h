@@ -2,6 +2,9 @@
 
 #include "GameBase.h"
 
+const int NUM_ROAD = 50;
+
+
 class FroggyCity :
 	public GameBase
 {
@@ -12,4 +15,6 @@ public:
 	void logic();
 	void draw();
 	void showStatus();
+private:
+	UBSprite road[NUM_ROAD];
 };
