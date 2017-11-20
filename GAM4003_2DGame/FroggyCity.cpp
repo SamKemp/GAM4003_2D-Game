@@ -2,11 +2,20 @@
 
 
 
-FroggyCity::FroggyCity()
+FroggyCity::FroggyCity(void)
 {
 }
 
 
-FroggyCity::~FroggyCity()
+FroggyCity::~FroggyCity(void)
 {
+}
+
+void FroggyCity::setup() {
+}
+
+void FroggyCity::logic() {
+}
+
+void FroggyCity::draw() {
 }
