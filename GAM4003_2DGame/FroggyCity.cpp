@@ -18,6 +18,8 @@ void FroggyCity::setup()
 	Bar = height / 10;
 	float rndX, rndY;
 
+	//Set seed for Random based on the current time
+	srand((int)time(0) + rand());
 
 	setBackground("images/grass.jpg");
 
@@ -62,7 +64,14 @@ void FroggyCity::setup()
 		frog[i].setTransparentColour(0,0,0);
 
 	}
-	
+
+	int tmp =  rnd.number(0,NUM_FROG);
+	rndX = rnd.number(0,width - (width / 30));
+	rndY = rnd.number((float)0,(height - Bar));
+	frog[tmp].setImage("images/FrogFace2.png");
+	frog[tmp].setWorldPosition(rndX, rndY);
+	frog[tmp].setTransparentColour(255,255,255);
+
 	for (int i = 0; i < NUM_BAR; i++)
 	{
 		bar[i].setImage("images/Bar2.png");
@@ -70,7 +79,7 @@ void FroggyCity::setup()
 		barLength = width /bar[i].getWidth();
 		if (i <= barLength)
 		{
-			bar[i].setWorldPosition((float)i*bar[i].getWidth(), (float)(height - BAR) - bar[i].getCenterY());
+			bar[i].setWorldPosition((float)i*bar[i].getWidth(), (float)(height - Bar) - bar[i].getCenterY());
 			PREVbarLength = barLength;
 		}
 		else
@@ -78,7 +87,11 @@ void FroggyCity::setup()
 			barLength = width /bar[i].getWidth() + PREVbarLength + 1;
 			if (i <= barLength)
 			{
-				bar[i].setWorldPosition((float)(i-PREVbarLength -1)*bar[i].getWidth(), (float)(height - BAR + bar[i].getHeight()) - bar[i].getCenterY());
+				bar[i].setWorldPosition((float)(i-PREVbarLength -1)*bar[i].getWidth(), (float)(height - Bar + bar[i].getHeight()) - bar[i].getCenterY());
+			}
+			else
+			{
+				bar[i].setWorldPosition(-5000, -5000);
 			}
 		}
 	}
@@ -94,18 +107,18 @@ void FroggyCity::draw()
 	for (int i = 0; i < NUM_ROAD; i++)
 	{
 		road[i].updateEverything();
-		print(i, road[i].getCenterX(), road[i].getCenterY());
+		//print(i, road[i].getCenterX(), road[i].getCenterY());
 	}
 
 	for (int i = 0; i < NUM_FROG; i++) {
 		frog[i].updateEverything();
-		print(i, frog[i].getCenterX(), frog[i].getCenterY());
+		//print(i, frog[i].getCenterX(), frog[i].getCenterY());
 	}
 
 	for (int i = 0; i < NUM_BAR; i++)
 	{
 		bar[i].updateEverything();
-		print(i, bar[i].getCenterX(), bar[i].getCenterY());
+		//print(i, bar[i].getCenterX(), bar[i].getCenterY());
 	}
 	
     showStatus();

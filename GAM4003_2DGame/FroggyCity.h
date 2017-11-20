@@ -3,7 +3,7 @@
 #include "GameBase.h"
 
 const int NUM_ROAD = 50;
-const int NUM_FROG = 20;
+const int NUM_FROG = 500;
 const int NUM_BAR = 1000;
 
 
@@ -18,6 +18,7 @@ public:
 	void draw();
 	void showStatus();
 private:
+
 	float Bar;
 
 	UBSprite road[NUM_ROAD];
