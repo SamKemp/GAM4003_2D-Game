@@ -2,4 +2,4 @@
 
 Related docs: http://utmm.pw/signi1ffd
 
-- [ ] Make planning document - Sam
+- [X] Make planning document - Sam
