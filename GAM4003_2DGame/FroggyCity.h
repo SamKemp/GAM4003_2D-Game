@@ -16,5 +16,9 @@ public:
 	void draw();
 	void showStatus();
 private:
+	float BAR;
+
 	UBSprite road[NUM_ROAD];
+	float roadLength;
+	float PREVroadLength;
 };

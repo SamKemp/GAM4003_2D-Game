@@ -15,12 +15,40 @@ FroggyCity::~FroggyCity(void)
 
 void FroggyCity::setup()
 {
+	BAR = height / 10;
+
 	setBackground("images/grass.jpg");
 
 	for (int i = 0; i < NUM_ROAD; i++)
 	{
 		road[i].setImage("images/roads/roadEW.tga");
-		road[i].setWorldPosition((float)i*road[i].getWidth(), (float)(height / 2) - road[i].getCenterY());
+		roadLength = 0;
+		roadLength = width / road[i].getWidth();
+		if (i <= roadLength)
+		{
+			road[i].setWorldPosition((float)i*road[i].getWidth(), (float)((height - BAR) / 2) - road[i].getCenterY());
+			PREVroadLength = roadLength;
+		}
+		else
+		{
+			road[i].setImage("images/roads/roadNS.tga");
+			roadLength = 0;
+			roadLength = (height-BAR) / road[i].getHeight() + PREVroadLength +1;
+			if (i <= roadLength)
+			{
+				road[i].setWorldPosition((float)(width / 2) - road[i].getCenterX(), (float)(i- PREVroadLength-1)*road[i].getHeight());
+			}
+			else if(i <= roadLength + 1)
+			{
+				road[i].setImage("images/roads/roadNEWS.tga");
+				road[i].setWorldPosition((float)(width / 2) - road[i].getCenterX(), (float)((height - BAR) / 2) - road[i].getCenterY());
+			}
+			else
+			{
+				road[i].setWorldPosition(-5000, -5000);
+
+			}
+		}
 	}
 }
 
@@ -34,6 +62,7 @@ void FroggyCity::draw()
 	for (int i = 0; i < NUM_ROAD; i++)
 	{
 		road[i].updateEverything();
+		print(i, road[i].getCenterX(), road[i].getCenterY());
 	}
     showStatus();
 }
