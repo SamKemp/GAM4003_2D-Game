@@ -4,6 +4,7 @@
 
 const int NUM_ROAD = 50;
 const int NUM_FROG = 20;
+const int NUM_BAR = 1000;
 
 
 class FroggyCity :
@@ -21,6 +22,10 @@ private:
 
 	UBSprite road[NUM_ROAD];
 	UBSprite frog[NUM_FROG];
+	UBSprite bar[NUM_BAR];
+	
 	float roadLength;
 	float PREVroadLength;
+	float barLength;
+	float PREVbarLength;
 };
