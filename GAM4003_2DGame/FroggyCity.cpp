@@ -14,8 +14,8 @@ FroggyCity::~FroggyCity(void)
 
 void FroggyCity::setup()
 {
-	Bar = height / 10;
-	float rndX, rndY;
+	//Bar = height / 10;
+	//float rndX, rndY;
 
 	//Set seed for Random based on the current time
 	srand((int)time(0) + rand());
@@ -29,12 +29,17 @@ void FroggyCity::setup()
 			grid[i][j].setImage("images/grid/empty.png");
 			if (j == 1)
 			{
-				grid[i][j].setWorldPositionY(0.0f);
-				grid[i][j].setWorldPositionX((float)i*road[i].getWidth());
+				grid[i][j].setWorldPositionY(height + grid[i][j].getCenterY());
+				grid[i][j].setWorldPositionX((float)i*grid[i][j].getWidth());
+			}
+			else
+			{
+				grid[i][j].setVisibility = false;
 			}
 		}
 	}
 
+/*
 	for (int i = 0; i < NUM_ROAD; i++)
 	{
 		road[i].setImage("images/roads/roadEW.tga");
@@ -107,6 +112,7 @@ void FroggyCity::setup()
 			}
 		}
 	}
+	*/
 }
 
 void FroggyCity::logic()
@@ -116,6 +122,7 @@ void FroggyCity::logic()
 
 void FroggyCity::draw()
 {
+	/*
 	for (int i = 0; i < NUM_ROAD; i++)
 	{
 		road[i].updateEverything();
@@ -132,7 +139,19 @@ void FroggyCity::draw()
 		bar[i].updateEverything();
 		//print(i, bar[i].getCenterX(), bar[i].getCenterY());
 	}
-	
+	*/
+
+	for (int i = 0; i < NUM_GRID; i++)
+	{
+		for (int j = 0; j < NUM_GRID; j++)
+		{
+			grid[i][j].updateEverything();
+			string temp = "[" + to_string(i) + "," + to_string(j) + "]";
+			print(temp, grid[i][j].getCenterX(), grid[i][j].getCenterY());
+		}
+	}
+
+
     showStatus();
 }
 
