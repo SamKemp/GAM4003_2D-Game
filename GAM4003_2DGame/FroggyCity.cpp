@@ -1,7 +1,6 @@
 #include "FroggyCity.h"
 
 
-
 FroggyCity::FroggyCity(void)
 {
 
@@ -22,6 +21,19 @@ void FroggyCity::setup()
 	srand((int)time(0) + rand());
 
 	setBackground("images/grass.jpg");
+
+	for (int i = 0; i < NUM_GRID; i++)
+	{
+		for (int j = 0; j < NUM_GRID; j++)
+		{
+			grid[i][j].setImage("images/grid/empty.png");
+			if (j == 1)
+			{
+				grid[i][j].setWorldPositionY(0.0f);
+				grid[i][j].setWorldPositionX((float)i*road[i].getWidth());
+			}
+		}
+	}
 
 	for (int i = 0; i < NUM_ROAD; i++)
 	{
