@@ -3,7 +3,7 @@
 #include "GameBase.h"
 
 
-const int NUM_GRID = 50;
+const int NUM_GRID = 100;
 //const int NUM_ROAD = 50;
 //const int NUM_FROG = 100;
 //const int NUM_BAR = 100;
@@ -23,7 +23,8 @@ private:
 
 	float Bar;
 
-	UBSprite grid[NUM_GRID][NUM_GRID];
+	UBSprite ** grid;
+	
 	//UBSprite road[NUM_ROAD];
 	//UBSprite frog[NUM_FROG];
 	//UBSprite bar[NUM_BAR];

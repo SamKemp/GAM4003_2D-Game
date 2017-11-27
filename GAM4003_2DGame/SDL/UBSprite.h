@@ -393,6 +393,11 @@ public:
 	// Get the current transparency for the sprite
 	int getSurfaceAlpha();
 
+	// Image manitulation
+	void DrawPixel(SDL_Surface* Target, Sint16 X, Sint16 Y, Uint16 Color);
+	Uint32 ReadPixel(SDL_Surface* Source, Sint16 X, Sint16 Y);
+	SDL_Surface *ScaleSurface(SDL_Surface *Surface, Uint16 Width, Uint16 Height);
+
 	/*
 	The following methods are used in moving and animating the sprite and are
 	unchanged from version 3.5

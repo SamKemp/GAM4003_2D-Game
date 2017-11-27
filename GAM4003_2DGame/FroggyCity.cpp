@@ -14,6 +14,13 @@ FroggyCity::~FroggyCity(void)
 
 void FroggyCity::setup()
 {
+
+	grid = new UBSprite*[NUM_GRID];
+	for(int i = 0; i < NUM_GRID;i++)
+	{
+		grid[i] = new UBSprite[NUM_GRID];
+	}
+
 	//Bar = height / 10;
 	//float rndX, rndY;
 
@@ -27,15 +34,11 @@ void FroggyCity::setup()
 		for (int j = 0; j < NUM_GRID; j++)
 		{
 			grid[i][j].setImage("images/grid/empty.png");
-			if (j == 1)
-			{
-				grid[i][j].setWorldPositionY(height + grid[i][j].getCenterY());
-				grid[i][j].setWorldPositionX((float)i*grid[i][j].getWidth());
-			}
-			else
-			{
-				grid[i][j].setVisibility = false;
-			}
+			//grid[i][j].ScaleSurface(,16,16)
+			grid[i][j].setTransparentColour(0,0,0);
+
+			grid[i][j].setWorldPositionY(0 + (grid[i][j].getHeight()*j));
+			grid[i][j].setWorldPositionX((float)i*grid[i][j].getWidth());
 		}
 	}
 
@@ -146,7 +149,7 @@ void FroggyCity::draw()
 		for (int j = 0; j < NUM_GRID; j++)
 		{
 			grid[i][j].updateEverything();
-			string temp = "[" + to_string(i) + "," + to_string(j) + "]";
+			string temp = to_string(j);
 			print(temp, grid[i][j].getCenterX(), grid[i][j].getCenterY());
 		}
 	}
