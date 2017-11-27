@@ -3,7 +3,8 @@
 #include "GameBase.h"
 
 
-const int NUM_GRID = 100;
+const int NUM_GRID_X = 120;
+const int NUM_GRID_Y = 68;
 //const int NUM_ROAD = 50;
 //const int NUM_FROG = 100;
 //const int NUM_BAR = 100;
@@ -19,6 +20,7 @@ public:
 	void logic();
 	void draw();
 	void showStatus();
+	void onKeyReleased();
 private:
 
 	float Bar;
