@@ -20,7 +20,12 @@ public:
 	void logic();
 	void draw();
 	void showStatus();
-	void onKeyReleased();
+	void onKeyPressed();
+	//void onKeyReleased();
+	//void onMousePressed();
+	//void onMouseReleased();
+	void Map1();
+	void CheckPlayer();
 private:
 
 	float Bar;
