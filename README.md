@@ -12,5 +12,6 @@ Related docs: http://utmm.pw/signi1ffd
 - [X] Added road textures | 20/11/2017 | 5 minutes | Sam
 - [X] Added grass and frog textures | 20/11/2017 | 10 minutes | Patrick
 - [X] Added getFullX() and getFullY() to UBSprite | 20/11/2017 | 5 minutes | Sam
-- [ ] Added and tested the grid system | 27/11/2017 | 1 hour | Sam
+- [X] Added and tested the grid system | 27/11/2017 | 1 hour | Sam
 - [ ] Make images for the grid | 27/11/2017 | 1 hour | Patrick
+- [ ] Make first playable map | 28/11/2017 | 2 hours | Sam
