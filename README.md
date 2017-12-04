@@ -28,3 +28,7 @@ Related docs: http://utmm.pw/signi1ffd
 - [ ] Implement Frog AI | 04/12/2017 | 1 hour | Sam
 - [ ] Implement Dinosaur spawning | 04/12/2017 | 1 hour | Sam
 - [ ] Implement Wave system | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Splashscreens | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Timer | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Pause feature | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Highscore/Leaderboard feature | 04/12/2017 | 1 hour | Sam
