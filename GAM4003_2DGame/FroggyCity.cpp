@@ -3,9 +3,6 @@
 int SpriteHeight = 32;
 int SpriteWidth = 32;
 
-// Just for fun stuff
-int playerX = 1, playerY = 1;
-
 FroggyCity::FroggyCity(void)
 {
 
@@ -30,26 +27,16 @@ void FroggyCity::setup()
 	// and adding a random number
 	srand((int)time(0) + rand());
 
-	//setBackground("images/grass.jpg");
 
 	for (int i = 0; i < NUM_GRID_X; i++)
 	{
 		for (int j = 0; j < NUM_GRID_Y; j++)
 		{
-			grid[i][j].setImage("images/grid/empty-g.png");
-			grid[i][j].setTransparentColour(0,0,0);
-			grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
-			grid[i][j].setWorldPositionX((float)i*SpriteWidth);
+			ChangeType(0, i, j);
 		}
 	}
 
 	Map1();
-
-	// Just for fun
-	grid[playerX][playerY].setImage("images/grid/player.png");
-	grid[playerX][playerY].setTransparentColour(0,0,0);
-	grid[playerX][playerY].setWorldPositionY(0 + (SpriteHeight*playerY));
-	grid[playerX][playerY].setWorldPositionX((float)playerX*SpriteWidth);
 }
 
 void FroggyCity::logic()
@@ -78,87 +65,130 @@ void FroggyCity::showStatus()
 
 void FroggyCity::onKeyPressed()
 {
-	if(keyDown == SDLK_SPACE)
+	
+}
+
+void FroggyCity::ChangeType(int type, int i, int j)
+{
+	grid[i][j].setType(type);
+
+	if(type == 1)
 	{
-		Map1();
+		int tmpPosX = i, tmpPosY = j;
+
+		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road2.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road1.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road3.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/pavement.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/pavement.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
 	}
-	else if(keyDown == SDLK_UP)
+	else if(type == 2)
 	{
-		grid[playerX][playerY].setImage("images/grid/empty-b.png");
-		grid[playerX][playerY].setTransparentColour(0,0,0);
-		grid[playerX][playerY].setWorldPositionY(0 + (SpriteHeight*playerY));
-		grid[playerX][playerY].setWorldPositionX((float)playerX*SpriteWidth);
+		int tmpPosX = i, tmpPosY = j;
 
-		playerX = playerX;
-		playerY = playerY - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road2.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
-		CheckPlayer();
+		tmpPosX = i, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road1.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
-		grid[playerX][playerY].setImage("images/grid/player.png");
-		grid[playerX][playerY].setTransparentColour(0,0,0);
-		grid[playerX][playerY].setWorldPositionY(0 + (SpriteHeight*playerY));
-		grid[playerX][playerY].setWorldPositionX((float)playerX*SpriteWidth);
+		tmpPosX = i, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road3.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/pavement.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/pavement.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
 	}
-	else if(keyDown == SDLK_DOWN)
+	else if(type == 3)
 	{
-		grid[playerX][playerY].setImage("images/grid/empty-b.png");
-		grid[playerX][playerY].setTransparentColour(0,0,0);
-		grid[playerX][playerY].setWorldPositionY(0 + (SpriteHeight*playerY));
-		grid[playerX][playerY].setWorldPositionX((float)playerX*SpriteWidth);
+		int tmpPosX, tmpPosY;
 
-		playerX = playerX;
-		playerY = playerY + 1;
+		grid[i][j].setImage("images/grid/RoadCross_4.png");
+		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
+		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
 
-		CheckPlayer();
+		tmpPosX = i - 1, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_0.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
-		grid[playerX][playerY].setImage("images/grid/player.png");
-		grid[playerX][playerY].setTransparentColour(0,0,0);
-		grid[playerX][playerY].setWorldPositionY(0 + (SpriteHeight*playerY));
-		grid[playerX][playerY].setWorldPositionX((float)playerX*SpriteWidth);
+		tmpPosX = i, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_1.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_2.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_3.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_5.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_6.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_7.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_8.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 	}
-	else if(keyDown == SDLK_LEFT)
+	else if (type == 8)
 	{
-		grid[playerX][playerY].setImage("images/grid/empty-b.png");
-		grid[playerX][playerY].setTransparentColour(0,0,0);
-		grid[playerX][playerY].setWorldPositionY(0 + (SpriteHeight*playerY));
-		grid[playerX][playerY].setWorldPositionX((float)playerX*SpriteWidth);
-
-		playerX = playerX - 1;
-		playerY = playerY;
-		
-		CheckPlayer();
-
-		grid[playerX][playerY].setImage("images/grid/player.png");
-		grid[playerX][playerY].setTransparentColour(0,0,0);
-		grid[playerX][playerY].setWorldPositionY(0 + (SpriteHeight*playerY));
-		grid[playerX][playerY].setWorldPositionX((float)playerX*SpriteWidth);
+		grid[i][j].setImage("images/grid/bar.png");
+		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
+		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
 	}
-	else if(keyDown == SDLK_RIGHT)
+	else if (type == 0)
 	{
-		grid[playerX][playerY].setImage("images/grid/empty-b.png");
-		grid[playerX][playerY].setTransparentColour(0,0,0);
-		grid[playerX][playerY].setWorldPositionY(0 + (SpriteHeight*playerY));
-		grid[playerX][playerY].setWorldPositionX((float)playerX*SpriteWidth);
-
-		playerX = playerX + 1;
-		playerY = playerY;
-		
-		CheckPlayer();
-
-		grid[playerX][playerY].setImage("images/grid/player.png");
-		grid[playerX][playerY].setTransparentColour(0,0,0);
-		grid[playerX][playerY].setWorldPositionY(0 + (SpriteHeight*playerY));
-		grid[playerX][playerY].setWorldPositionX((float)playerX*SpriteWidth);
-	}
-	else
-	{
-		int x = mouseX / 32;
-		int y = mouseY / 32;
-
-		grid[x][y].setImage("images/grid/empty-b.png");
-		grid[x][y].setTransparentColour(0,0,0);
-		grid[x][y].setWorldPositionY(0 + (SpriteHeight*y));
-		grid[x][y].setWorldPositionX((float)x*SpriteWidth);
+		grid[i][j].setImage("images/grid/empty-g.png");
+		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
+		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
 	}
 }
 
@@ -168,59 +198,12 @@ void FroggyCity::Map1()
 	{
 		for (int j = 0; j < NUM_GRID_Y; j++)
 		{
-			if(i < 20 && j == 10) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i < 21 && j == 11) {grid[i][j].setImage("images/grid/ph-road1.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i < 21 && j == 12) {grid[i][j].setImage("images/grid/ph-road2.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i < 21 && j == 13) {grid[i][j].setImage("images/grid/ph-road3.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i < 20 && j == 14) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 20 && j < 11) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 21 && j < 11) {grid[i][j].setImage("images/grid/ph-road1.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 22 && j < 11) {grid[i][j].setImage("images/grid/ph-road2.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 23 && j < 11) {grid[i][j].setImage("images/grid/ph-road3.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 24 && j < 11) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 21 && j == 11) {grid[i][j].setImage("images/grid/RoadCross_0.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 22 && j == 11) {grid[i][j].setImage("images/grid/RoadCross_1.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 23 && j == 11) {grid[i][j].setImage("images/grid/RoadCross_2.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 21 && j == 12) {grid[i][j].setImage("images/grid/RoadCross_3.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 22 && j == 12) {grid[i][j].setImage("images/grid/RoadCross_4.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 23 && j == 12) {grid[i][j].setImage("images/grid/RoadCross_5.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 21 && j == 13) {grid[i][j].setImage("images/grid/RoadCross_6.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 22 && j == 13) {grid[i][j].setImage("images/grid/RoadCross_7.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 23 && j == 13) {grid[i][j].setImage("images/grid/RoadCross_8.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 20 && (j > 13 && j < (NUM_GRID_Y-9))) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 21 && (j > 13 && j < (NUM_GRID_Y-9))) {grid[i][j].setImage("images/grid/ph-road1.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 22 && (j > 13 && j < (NUM_GRID_Y-9))) {grid[i][j].setImage("images/grid/ph-road2.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 23 && (j > 13 && j < (NUM_GRID_Y-9))) {grid[i][j].setImage("images/grid/ph-road3.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 24 && (j > 13 && j < (NUM_GRID_Y-9))) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i > 24 && j == 10) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i > 23 && j == 11) {grid[i][j].setImage("images/grid/ph-road1.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i > 23 && j == 12) {grid[i][j].setImage("images/grid/ph-road2.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i > 23 && j == 13) {grid[i][j].setImage("images/grid/ph-road3.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i > 24 && j == 14) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(j > (NUM_GRID_Y - 10)) {grid[i][j].setImage("images/grid/bar.png");}
-			else {grid[i][j].setImage("images/grid/empty-g.png"); grid[i][j].setTransparentColour(0,0,0);}
-			grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
-			grid[i][j].setWorldPositionX((float)i*SpriteWidth);
+			if(i < 21 && j == 12) { ChangeType(2, i, j); }
+			else if(i == 22 && j < 11) { ChangeType(1, i, j); }
+			else if(i == 22 && j == 12) { ChangeType(3, i, j); }
+			else if(i == 22 && (j > 13 && j < (NUM_GRID_Y-9))) { ChangeType(1, i, j); }
+			else if(i > 23 && j == 12) { ChangeType(2, i, j); }
+			else if(j > (NUM_GRID_Y - 10)) { ChangeType(8, i, j); }
 		}
-	}
-}
-
-void FroggyCity::CheckPlayer()
-{
-	if(playerX < 0)
-	{
-		playerX = NUM_GRID_X;
-	}
-	if(playerY < 0)
-	{
-		playerY = NUM_GRID_Y;
-	}
-	if(playerX >= NUM_GRID_X)
-	{
-		playerX = 0;
-	}
-	if(playerY >= NUM_GRID_Y)
-	{
-		playerY = 0;
 	}
 }
