@@ -76,6 +76,27 @@ void FroggyCity::showStatus()
 	print(slainDinos, width - 100, height - 110);
 	print("Wave Timer", width - 275, height - 80);
 	print("0.0", width - 100, height - 80);
+
+	print("|", width - 350, height - 284);
+	print("|", width - 350, height - 268);
+	print("|", width - 350, height - 252);
+	print("|", width - 350, height - 236);
+	print("|", width - 350, height - 220);
+	print("|", width - 350, height - 204);
+	print("|", width - 350, height - 188);
+	print("|", width - 350, height - 172);
+	print("|", width - 350, height - 156);
+	print("|", width - 350, height - 140);
+	print("|", width - 350, height - 124);
+	print("|", width - 350, height - 108);
+	print("|", width - 350, height - 92);
+	print("|", width - 350, height - 76);
+	print("|", width - 350, height - 60);
+	print("|", width - 350, height - 44);
+	print("|", width - 350, height - 28);
+	print("|", width - 350, height - 12);
+
+
 }
 
 // Shoudd't need to look at
