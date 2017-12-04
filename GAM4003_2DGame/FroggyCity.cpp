@@ -178,6 +178,134 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 	}
+	else if(type == 7)
+	{
+		int tmpPosX, tmpPosY;
+
+		grid[i][j].setImage("images/grid/building/Building_12.png");
+		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
+		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_0.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_1.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_2.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_3.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_4.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_5.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_6.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_7.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_8.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_9.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_10.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_11.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_13.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_14.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_15.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_16.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_17.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_18.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_19.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_20.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_21.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_22.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_23.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_24.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+	}
 	else if (type == 8)
 	{
 		grid[i][j].setImage("images/grid/bar.png");
@@ -203,6 +331,7 @@ void FroggyCity::Map1()
 			else if(i == 22 && j == 12) { ChangeType(3, i, j); }
 			else if(i == 22 && (j > 13 && j < (NUM_GRID_Y-9))) { ChangeType(1, i, j); }
 			else if(i > 23 && j == 12) { ChangeType(2, i, j); }
+			else if(i == 17 && j == 7) { ChangeType(7, i, j); }
 			else if(j > (NUM_GRID_Y - 10)) { ChangeType(8, i, j); }
 		}
 	}
