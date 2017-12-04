@@ -76,27 +76,27 @@ void FroggyCity::ChangeType(int type, int i, int j)
 	{
 		int tmpPosX = i, tmpPosY = j;
 
-		grid[tmpPosX][tmpPosY].setImage("images/grid/roadV2.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/roadV2.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i - 1, tmpPosY = j;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/roadV1.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/roadV1.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i + 1, tmpPosY = j;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/roadV3.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/roadV3.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i + 2, tmpPosY = j;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/pavement.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/pavement.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i - 2, tmpPosY = j;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/pavement.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/pavement.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
@@ -105,27 +105,27 @@ void FroggyCity::ChangeType(int type, int i, int j)
 	{
 		int tmpPosX = i, tmpPosY = j;
 
-		grid[tmpPosX][tmpPosY].setImage("images/grid/roadH2.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/roadH2.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i, tmpPosY = j - 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/roadH1.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/roadH1.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i, tmpPosY = j + 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/roadH3.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/roadH3.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i, tmpPosY = j + 2;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/pavement.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/pavement.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i, tmpPosY = j - 2;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/pavement.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/pavement.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
@@ -134,47 +134,47 @@ void FroggyCity::ChangeType(int type, int i, int j)
 	{
 		int tmpPosX, tmpPosY;
 
-		grid[i][j].setImage("images/grid/RoadCross_4.png");
+		grid[i][j].setImage("images/grid/road/RoadCross_4.png");
 		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
 		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
 
 		tmpPosX = i - 1, tmpPosY = j - 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_0.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/RoadCross_0.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i, tmpPosY = j - 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_1.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/RoadCross_1.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i + 1, tmpPosY = j - 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_2.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/RoadCross_2.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i - 1, tmpPosY = j;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_3.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/RoadCross_3.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i + 1, tmpPosY = j;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_5.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/RoadCross_5.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i - 1, tmpPosY = j + 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_6.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/RoadCross_6.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i, tmpPosY = j + 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_7.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/RoadCross_7.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i + 1, tmpPosY = j + 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/RoadCross_8.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/road/RoadCross_8.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 	}
