@@ -26,6 +26,8 @@ public:
 private:
 
 	float Bar;
+	float Money;
+	int Wave, Population, slainDinos;
 
 	UBSprite ** grid;
 	
