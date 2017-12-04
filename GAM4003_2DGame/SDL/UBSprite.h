@@ -166,6 +166,7 @@ private:
 
 	bool   visible;
 	int	   height, width;
+	int type;
 	Uint32 firstFrame;
 	Uint32 lastFrame;
 	Uint32 currentFrame;
@@ -285,6 +286,9 @@ public:
 	void setImage(char *imageFileName, Sint32 cols, Sint32 rows, bool share = false);
 	void setImage(char *imageFileName, Sint32 hmf, char *alphaMaskFileName, bool share = false);
 	void setImage(char *imageFileName, Sint32 cols, Sint32 rows, char *alphaMaskFileName, bool share = false);
+
+	int getType();
+	void setType(int newType);
 
 private:
 	// Series of private functions called by constructors

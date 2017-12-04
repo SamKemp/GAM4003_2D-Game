@@ -13,6 +13,16 @@
 //  it to 5, we would have 60% collision detection
 #define COLLISIONDIVISOR (10)
 
+int UBSprite::getType()
+{
+	return type;
+}
+void UBSprite::setType(int newType)
+{
+	type = newType;
+}
+
+
 // ========================================================================================
 // ============= ATTRIBUTES AND FUNCTIONS FOR BITMAP SHARING STARTS HERE ==================
 // ========================================================================================
