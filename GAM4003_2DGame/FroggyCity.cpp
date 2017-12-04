@@ -4,6 +4,10 @@ int SpriteHeight = 32;
 int SpriteWidth = 32;
 
 int Timer = 0;
+int num_buildings = 0;
+int num_dinos = -1;
+bool runTimer = true;
+bool canBuild = true;
 
 FroggyCity::FroggyCity(void)
 {
@@ -38,22 +42,77 @@ void FroggyCity::setup()
 		}
 	}
 
-	Map1();
+	// UI_Building setup
+	UI_Building.setImage("images/Building.png");
+	UI_Building.setWorldPositionX(((width/2)-300) - 150);
+	UI_Building.setWorldPositionY(height - 230);
 
+	// UI_Turret setup
+	UI_Turret.setImage("images/Turret.png");
+	UI_Turret.setWorldPositionX(((width/2)-300) + 150);
+	UI_Turret.setWorldPositionY(height - 230);
+	
 	Money = 100.0f;
 	Population = 0;
 	Wave = 0;
 	slainDinos = 0;
+	buildTimer = MAX_BUILD_TIME;
 
 	Timer = time(NULL) + 1;
+
+	Map1();
+
+	onBuild();
 }
 
 void FroggyCity::logic()
 {
-	if (time(NULL) == Timer)
+	if(runTimer)
 	{
-		Timer = time(NULL) + 1;
+		if (time(NULL) == Timer)
+		{
+			Timer = time(NULL) + 1;
+			buildTimer--;
+		}
 	}
+
+	if(buildTimer == -1)
+	{
+		onWave();
+	}
+
+	if(num_dinos == 0)
+	{
+		num_dinos = -1;
+		cout << "Dinos dead: " << num_dinos << endl;
+
+		onBuild();
+	}
+}
+
+void FroggyCity::onWave()
+{
+	runTimer = false;
+	buildTimer = MAX_BUILD_TIME;
+	Wave++;
+
+	// Stop Build actions
+	canBuild = false;
+	// Spawn Dinos
+
+	num_dinos = Wave * 10;
+	cout << "Set dinos: " << num_dinos << endl;
+}
+
+void FroggyCity::onBuild()
+{
+	buildTimer = MAX_BUILD_TIME;
+	Timer = time(NULL) + 1;
+	runTimer = true;
+	Money = Money + (num_buildings * 50);
+
+	// Allow build actions
+	canBuild = true;
 }
 
 void FroggyCity::draw()
@@ -66,6 +125,10 @@ void FroggyCity::draw()
 		}
 	}
 
+	// UI_Building update
+	UI_Building.updateEverything();
+	// UI_Turret update
+	UI_Turret.updateEverything();
 
     showStatus();
 }
@@ -82,7 +145,7 @@ void FroggyCity::showStatus()
 	print("Dinosaurs Slain", width - 275, height - 110);
 	print(slainDinos, width - 100, height - 110);
 	print("Wave Timer", width - 275, height - 80);
-	print("0.0", width - 100, height - 80);
+	print(buildTimer, width - 100, height - 80);
 
 	print("|", width - 350, height - 284);
 	print("|", width - 350, height - 268);
@@ -102,8 +165,24 @@ void FroggyCity::showStatus()
 	print("|", width - 350, height - 44);
 	print("|", width - 350, height - 28);
 	print("|", width - 350, height - 12);
+}
 
+void FroggyCity::onKeyReleased()
+{
+	if(num_dinos > 0)
+	{
+		num_dinos--;
+		cout << "Killed dino: " << num_dinos << endl;
+		slainDinos++;
+	}
+}
 
+void FroggyCity::onMousePressed()
+{
+	if(canBuild)
+	{
+		// Building management code
+	}
 }
 
 // Should't need to look at
@@ -485,6 +564,9 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		grid[tmpPosX][tmpPosY].setImage("images/grid/building/Building_24.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		Population = Population + 6;
+		num_buildings++;
 	}
 	else if (type == 8)
 	{
@@ -628,11 +710,6 @@ void FroggyCity::ChangeType(int type, int i, int j)
 	}
 }
 
-void FroggyCity::onKeyPressed()
-{
-	ChangeType(4, 1, 10);
-}
-
 void FroggyCity::Map1()
 {
 	for (int i = 0; i < NUM_GRID_X; i++)
@@ -649,7 +726,7 @@ void FroggyCity::Map1()
 			else if(i == 3 && j == 7) { ChangeType(9, i, j); }
 			else if(i == 10 && j == 7) { ChangeType(9, i, j); }
 			else if(i == 17 && j == 7) { ChangeType(9, i, j); }
-			else if(i == 27 && j == 7) { ChangeType(9, i, j); }
+			else if(i == 27 && j == 7) { ChangeType(7, i, j); }
 			else if(i == 33 && j == 7) { ChangeType(9, i, j); }
 			else if(i == 39 && j == 7) { ChangeType(9, i, j); }
 			else if(i == 45 && j == 7) { ChangeType(9, i, j); }
@@ -657,7 +734,7 @@ void FroggyCity::Map1()
 			else if(i == 57 && j == 7) { ChangeType(9, i, j); }
 			else if(i == 3 && j == 17) { ChangeType(9, i, j); }
 			else if(i == 10 && j == 17) { ChangeType(9, i, j); }
-			else if(i == 17 && j == 17) { ChangeType(9, i, j); }
+			else if(i == 17 && j == 17) { ChangeType(7, i, j); }
 			else if(i == 27 && j == 17) { ChangeType(9, i, j); }
 			else if(i == 33 && j == 17) { ChangeType(9, i, j); }
 			else if(i == 39 && j == 17) { ChangeType(9, i, j); }
