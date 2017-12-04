@@ -15,5 +15,16 @@ Related docs: http://utmm.pw/signi1ffd
 - [X] Added and tested the grid system | 27/11/2017 | 1 hour | Sam
 - [X] Make images for the grid | 27/11/2017 | 1 hour | Patrick
 - [X] Make first playable map | 28/11/2017 | 2 hours | Sam
-- [ ] Clean up Plan Doc | 04/12/2017 | 30 mins | Patrick
-- [ ] Add Type Attribute to UBSprite | 04/12/2017 | 30 mins | Sam
+- [X] Clean up Plan Doc | 04/12/2017 | 30 mins | Patrick
+- [X] Add Type Attribute to UBSprite | 04/12/2017 | 30 mins | Sam
+- [ ] Implement Type Attribute | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Buttons | 04/12/2017 | 1 hour | Sam
+- [ ] Finish obtaining images | 04/12/2017 | 1 hour | Patrick
+- [ ] Implement UI | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Click and drag features | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Turret Math | 04/12/2017 | 1 hour | Patrick
+- [ ] Implement Type Attribute | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Dinosaur AI | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Frog AI | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Dinosaur spawning | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Wave system | 04/12/2017 | 1 hour | Sam
