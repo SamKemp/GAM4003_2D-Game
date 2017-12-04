@@ -166,7 +166,7 @@ private:
 
 	bool   visible;
 	int	   height, width;
-	int type;
+	int type = 0;
 	Uint32 firstFrame;
 	Uint32 lastFrame;
 	Uint32 currentFrame;
