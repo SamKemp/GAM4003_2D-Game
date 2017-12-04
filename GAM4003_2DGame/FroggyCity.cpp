@@ -76,17 +76,17 @@ void FroggyCity::ChangeType(int type, int i, int j)
 	{
 		int tmpPosX = i, tmpPosY = j;
 
-		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road2.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/roadV2.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i - 1, tmpPosY = j;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road1.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/roadV1.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i + 1, tmpPosY = j;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road3.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/roadV3.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
@@ -105,17 +105,17 @@ void FroggyCity::ChangeType(int type, int i, int j)
 	{
 		int tmpPosX = i, tmpPosY = j;
 
-		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road2.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/roadH2.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i, tmpPosY = j - 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road1.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/roadH1.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 		tmpPosX = i, tmpPosY = j + 1;
-		grid[tmpPosX][tmpPosY].setImage("images/grid/ph-road3.png");
+		grid[tmpPosX][tmpPosY].setImage("images/grid/roadH3.png");
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
