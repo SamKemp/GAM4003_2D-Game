@@ -178,15 +178,15 @@ void FroggyCity::Map1()
 			else if(i == 22 && j < 11) {grid[i][j].setImage("images/grid/ph-road2.png"); grid[i][j].setTransparentColour(0,0,0);}
 			else if(i == 23 && j < 11) {grid[i][j].setImage("images/grid/ph-road3.png"); grid[i][j].setTransparentColour(0,0,0);}
 			else if(i == 24 && j < 11) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 21 && j == 11) {grid[i][j].setImage("images/grid/ph-RoadCross_0.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 22 && j == 11) {grid[i][j].setImage("images/grid/ph-RoadCross_1.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 23 && j == 11) {grid[i][j].setImage("images/grid/ph-RoadCross_2.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 21 && j == 12) {grid[i][j].setImage("images/grid/ph-RoadCross_3.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 22 && j == 12) {grid[i][j].setImage("images/grid/ph-RoadCross_4.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 23 && j == 12) {grid[i][j].setImage("images/grid/ph-RoadCross_5.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 21 && j == 13) {grid[i][j].setImage("images/grid/ph-RoadCross_6.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 22 && j == 13) {grid[i][j].setImage("images/grid/ph-RoadCross_7.png"); grid[i][j].setTransparentColour(0,0,0);}
-			else if(i == 23 && j == 13) {grid[i][j].setImage("images/grid/ph-RoadCross_8.png"); grid[i][j].setTransparentColour(0,0,0);}
+			else if(i == 21 && j == 11) {grid[i][j].setImage("images/grid/RoadCross_0.png"); grid[i][j].setTransparentColour(0,0,0);}
+			else if(i == 22 && j == 11) {grid[i][j].setImage("images/grid/RoadCross_1.png"); grid[i][j].setTransparentColour(0,0,0);}
+			else if(i == 23 && j == 11) {grid[i][j].setImage("images/grid/RoadCross_2.png"); grid[i][j].setTransparentColour(0,0,0);}
+			else if(i == 21 && j == 12) {grid[i][j].setImage("images/grid/RoadCross_3.png"); grid[i][j].setTransparentColour(0,0,0);}
+			else if(i == 22 && j == 12) {grid[i][j].setImage("images/grid/RoadCross_4.png"); grid[i][j].setTransparentColour(0,0,0);}
+			else if(i == 23 && j == 12) {grid[i][j].setImage("images/grid/RoadCross_5.png"); grid[i][j].setTransparentColour(0,0,0);}
+			else if(i == 21 && j == 13) {grid[i][j].setImage("images/grid/RoadCross_6.png"); grid[i][j].setTransparentColour(0,0,0);}
+			else if(i == 22 && j == 13) {grid[i][j].setImage("images/grid/RoadCross_7.png"); grid[i][j].setTransparentColour(0,0,0);}
+			else if(i == 23 && j == 13) {grid[i][j].setImage("images/grid/RoadCross_8.png"); grid[i][j].setTransparentColour(0,0,0);}
 			else if(i == 20 && (j > 13 && j < (NUM_GRID_Y-9))) {grid[i][j].setImage("images/grid/pavement.png"); grid[i][j].setTransparentColour(0,0,0);}
 			else if(i == 21 && (j > 13 && j < (NUM_GRID_Y-9))) {grid[i][j].setImage("images/grid/ph-road1.png"); grid[i][j].setTransparentColour(0,0,0);}
 			else if(i == 22 && (j > 13 && j < (NUM_GRID_Y-9))) {grid[i][j].setImage("images/grid/ph-road2.png"); grid[i][j].setTransparentColour(0,0,0);}
