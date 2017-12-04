@@ -178,6 +178,146 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 	}
+	else if (type == 4)
+	{
+		grid[i][j].setImage("images/grid/frog.png");
+		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
+		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
+	}
+	else if (type == 5)
+	{
+		grid[i][j].setImage("images/grid/dino.png");
+		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
+		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
+	}
+	else if(type == 6)
+	{
+		int tmpPosX, tmpPosY;
+
+		grid[i][j].setImage("images/grid/turret/Turret_12.png");
+		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
+		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_0.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_1.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_2.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_3.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j - 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_4.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_5.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_6.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_7.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_8.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j - 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_9.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_10.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_11.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_13.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_14.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_15.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_16.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_17.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_18.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j + 1;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_19.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 2, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_20.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i - 1, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_21.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_22.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 1, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_23.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+
+		tmpPosX = i + 2, tmpPosY = j + 2;
+		grid[tmpPosX][tmpPosY].setImage("images/grid/turret/Turret_24.png");
+		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
+		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
+	}
 	else if(type == 7)
 	{
 		int tmpPosX, tmpPosY;
@@ -331,7 +471,8 @@ void FroggyCity::Map1()
 			else if(i == 22 && j == 12) { ChangeType(3, i, j); }
 			else if(i == 22 && (j > 13 && j < (NUM_GRID_Y-9))) { ChangeType(1, i, j); }
 			else if(i > 23 && j == 12) { ChangeType(2, i, j); }
-			else if(i == 17 && j == 7) { ChangeType(7, i, j); }
+			//else if(i == 17 && j == 7) { ChangeType(7, i, j); }
+			else if(i == 17 && j == 7) { ChangeType(6, i, j); }
 			else if(j > (NUM_GRID_Y - 10)) { ChangeType(8, i, j); }
 		}
 	}
