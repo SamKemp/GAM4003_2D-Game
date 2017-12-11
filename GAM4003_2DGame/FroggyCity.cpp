@@ -12,7 +12,7 @@ void FroggyCity::setVariables()
 	MAX_BUILD_TIME = 60;
 
 	// Sets the starting monies
-	Money = 100.0f;
+	Money = 0;
 
 	// Sets the starting population
 	Population = 0;
@@ -59,7 +59,7 @@ void FroggyCity::setup()
 	{
 		for (int j = 0; j < NUM_GRID_Y; j++)
 		{
-			ChangeType(0, i, j);
+			ChangeType(TRANS, i, j);
 		}
 	}
 
@@ -281,7 +281,7 @@ void FroggyCity::MenuScreen()
 	{
 		for (int j = 0; j < NUM_GRID_Y; j++)
 		{
-			ChangeType(10, i, j);
+			ChangeType(TRANS, i, j);
 		}
 	}
 
@@ -290,6 +290,14 @@ void FroggyCity::MenuScreen()
 
 void FroggyCity::SetupScreen()
 {
+	for (int i = 0; i < NUM_GRID_X; i++)
+	{
+		for (int j = 0; j < NUM_GRID_Y; j++)
+		{
+			ChangeType(GRASS, i, j);
+		}
+	}
+
 	// Fill the map
 	Map1();
 
@@ -338,7 +346,7 @@ void FroggyCity::EndScreen()
 	{
 		for (int j = 0; j < NUM_GRID_Y; j++)
 		{
-			ChangeType(10, i, j);
+			ChangeType(TRANS, i, j);
 		}
 	}
 
@@ -885,34 +893,34 @@ void FroggyCity::Map1()
 	{
 		for (int j = 0; j < NUM_GRID_Y; j++)
 		{
-			if(i < 21 && j == 12) { ChangeType(2, i, j); }
-			else if(i == 22 && j < 11) { ChangeType(1, i, j); }
-			else if(i == 22 && j == 12) { ChangeType(3, i, j); }
-			else if(i == 22 && (j > 13 && j < (NUM_GRID_Y-9))) { ChangeType(1, i, j); }
-			else if(i > 23 && j == 12) { ChangeType(2, i, j); }
-			else if(i == 17 && j == 2) { ChangeType(9, i, j); }
-			else if(i == 27 && j == 2) { ChangeType(9, i, j); }
-			else if(i == 3 && j == 7) { ChangeType(9, i, j); }
-			else if(i == 10 && j == 7) { ChangeType(9, i, j); }
-			else if(i == 17 && j == 7) { ChangeType(9, i, j); }
-			else if(i == 27 && j == 7) { ChangeType(7, i, j); }
-			else if(i == 33 && j == 7) { ChangeType(9, i, j); }
-			else if(i == 39 && j == 7) { ChangeType(9, i, j); }
-			else if(i == 45 && j == 7) { ChangeType(9, i, j); }
-			else if(i == 51 && j == 7) { ChangeType(9, i, j); }
-			else if(i == 57 && j == 7) { ChangeType(9, i, j); }
-			else if(i == 3 && j == 17) { ChangeType(9, i, j); }
-			else if(i == 10 && j == 17) { ChangeType(9, i, j); }
-			else if(i == 17 && j == 17) { ChangeType(7, i, j); }
-			else if(i == 27 && j == 17) { ChangeType(9, i, j); }
-			else if(i == 33 && j == 17) { ChangeType(9, i, j); }
-			else if(i == 39 && j == 17) { ChangeType(9, i, j); }
-			else if(i == 45 && j == 17) { ChangeType(9, i, j); }
-			else if(i == 51 && j == 17) { ChangeType(9, i, j); }
-			else if(i == 57 && j == 17) { ChangeType(9, i, j); }
-			else if(i == 17 && j == NUM_GRID_Y - 12) { ChangeType(9, i, j); }
-			else if(i == 27 && j == NUM_GRID_Y - 12) { ChangeType(9, i, j); }
-			else if(j > (NUM_GRID_Y - 10)) { ChangeType(8, i, j); }
+			if(i < 21 && j == 12) { ChangeType(HOR_ROAD, i, j); }
+			else if(i == 22 && j < 11) { ChangeType(VERT_ROAD, i, j); }
+			else if(i == 22 && j == 12) { ChangeType(CROSS_ROAD, i, j); }
+			else if(i == 22 && (j > 13 && j < (NUM_GRID_Y-9))) { ChangeType(VERT_ROAD, i, j); }
+			else if(i > 23 && j == 12) { ChangeType(HOR_ROAD, i, j); }
+			else if(i == 17 && j == 2) { ChangeType(PLOT, i, j); }
+			else if(i == 27 && j == 2) { ChangeType(PLOT, i, j); }
+			else if(i == 3 && j == 7) { ChangeType(PLOT, i, j); }
+			else if(i == 10 && j == 7) { ChangeType(PLOT, i, j); }
+			else if(i == 17 && j == 7) { ChangeType(PLOT, i, j); }
+			else if(i == 27 && j == 7) { ChangeType(BUILDING, i, j); }
+			else if(i == 33 && j == 7) { ChangeType(PLOT, i, j); }
+			else if(i == 39 && j == 7) { ChangeType(PLOT, i, j); }
+			else if(i == 45 && j == 7) { ChangeType(PLOT, i, j); }
+			else if(i == 51 && j == 7) { ChangeType(PLOT, i, j); }
+			else if(i == 57 && j == 7) { ChangeType(PLOT, i, j); }
+			else if(i == 3 && j == 17) { ChangeType(PLOT, i, j); }
+			else if(i == 10 && j == 17) { ChangeType(PLOT, i, j); }
+			else if(i == 17 && j == 17) { ChangeType(BUILDING, i, j); }
+			else if(i == 27 && j == 17) { ChangeType(PLOT, i, j); }
+			else if(i == 33 && j == 17) { ChangeType(PLOT, i, j); }
+			else if(i == 39 && j == 17) { ChangeType(PLOT, i, j); }
+			else if(i == 45 && j == 17) { ChangeType(PLOT, i, j); }
+			else if(i == 51 && j == 17) { ChangeType(PLOT, i, j); }
+			else if(i == 57 && j == 17) { ChangeType(PLOT, i, j); }
+			else if(i == 17 && j == NUM_GRID_Y - 12) { ChangeType(PLOT, i, j); }
+			else if(i == 27 && j == NUM_GRID_Y - 12) { ChangeType(PLOT, i, j); }
+			else if(j > (NUM_GRID_Y - 10)) { ChangeType(BAR, i, j); }
 		}
 	}
 }
