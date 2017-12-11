@@ -93,16 +93,16 @@ void FroggyCity::logic()
 		}
 	}
 
+	if(buildTimer == -1)
+	{
+		onWave();
+	}
+
 	if (num_spawn_dinos > 0)
 	{
 		//spawnDino();
 		num_dinos++;
 		num_spawn_dinos--;
-	}
-
-	if(buildTimer == -1)
-	{
-		onWave();
 	}
 
 	if(num_dinos == 0)
@@ -126,6 +126,7 @@ void FroggyCity::onWave()
 	// Spawn Dinos
 	num_spawn_dinos = Wave * _DinosPerRound;
 	num_dinos = 0;
+
 	cout << "Set dinos: " << num_dinos << endl;
 }
 
@@ -135,6 +136,7 @@ void FroggyCity::onBuild()
 	Timer = time(NULL) + 1;
 	runTimer = true;
 	Money = Money + (num_buildings * 50);
+	//Money = Money + 100;
 
 	// Allow build actions
 	canBuild = true;
@@ -262,7 +264,8 @@ void FroggyCity::onMousePressed()
 {
 	if(gameState == MENU)
 	{
-		if (mouseX > 614 && mouseX < 974 && mouseY > 497 && mouseY < 634)
+		//if (mouseX > 614 && mouseX < 974 && mouseY > 497 && mouseY < 634)
+		if (mouseX > rand() % 1920 && mouseX < rand() % 1920 && mouseY > rand() % 1080 && mouseY < rand() % 1080)
 		{
 			gameState = SETUP;
 			SetupScreen();
