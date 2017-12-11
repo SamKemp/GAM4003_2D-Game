@@ -43,8 +43,6 @@ FroggyCity::~FroggyCity(void)
 
 void FroggyCity::setup()
 {
-	gameState = MENU;
-
 	// Dynamic creaton of sprite
 	grid = new UBSprite*[NUM_GRID_X]; // grid[60]
 	for(int i = 0; i < NUM_GRID_X;i++)
@@ -79,6 +77,8 @@ void FroggyCity::setup()
 
 	setVariables();
 
+	gameState = MENU;
+	MenuScreen();
 	
 }
 
@@ -174,15 +174,6 @@ void FroggyCity::draw()
 {
 	switch(gameState)
 	{
-		case MENU:
-			MenuScreen();
-			break;
-		case SETUP:
-			SetupScreen();
-			break;
-		case TUTORIAL:
-			TutorialScreen();
-			break;
 		case PLAY:
 			PlayScreen();
 			break;
@@ -269,10 +260,20 @@ void FroggyCity::onKeyReleased()
 
 void FroggyCity::onMousePressed()
 {
-
-	if(canBuild)
+	if(gameState == MENU)
 	{
-		// Building management code
+		if (mouseX > 614 && mouseX < 974 && mouseY > 497 && mouseY < 634)
+		{
+			gameState = SETUP;
+			SetupScreen();
+		}
+	}
+	if(gameState == PLAY)
+	{
+		if(canBuild)
+		{
+			// Building management code
+		}
 	}
 }
 
@@ -299,11 +300,8 @@ void FroggyCity::SetupScreen()
 
 	//Start the game
 	onBuild();
-}
 
-void FroggyCity::TutorialScreen()
-{
-	
+	gameState = PLAY;
 }
 
 void FroggyCity::PlayScreen()
