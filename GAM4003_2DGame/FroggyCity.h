@@ -91,4 +91,5 @@ private:
 	UBSprite ** grid;
 	UBSprite UI_Building;
 	UBSprite UI_Turret;
+	UBSprite Bullet;
 };

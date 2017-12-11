@@ -32,3 +32,4 @@ Related docs: http://utmm.pw/signi1ffd
 - [X] Implement Timer | 04/12/2017 | 1 hour | Sam
 - [ ] Implement Pause feature | 04/12/2017 | 1 hour | Sam
 - [ ] Implement Highscore/Leaderboard feature | 04/12/2017 | 1 hour | Sam
+- [ ] Implement Tutorial | 11/12/2017 | 1 hour | Andrew
