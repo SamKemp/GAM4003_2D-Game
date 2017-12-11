@@ -95,7 +95,7 @@ void FroggyCity::logic()
 
 	if (num_spawn_dinos > 0)
 	{
-		spawnDino();
+		//spawnDino();
 		num_dinos++;
 		num_spawn_dinos--;
 	}
@@ -270,6 +270,11 @@ void FroggyCity::SetupScreen()
 
 	//Start the game
 	onBuild();
+}
+
+void FroggyCity::TutorialScreen()
+{
+	
 }
 
 void FroggyCity::PlayScreen()
