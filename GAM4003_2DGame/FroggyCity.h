@@ -48,7 +48,7 @@ public:
 	void onPause();
 	void spawnDino(int spawnFrom);
 	void spawnFrog(int count);
-	void FireTurret();
+	void FireTurret(int type, int x, int y);
 
 	// No touchy
 	void MenuScreen();

@@ -195,9 +195,22 @@ void FroggyCity::draw()
 	}
 }
 
-void FroggyCity::FireTurret()
+void FroggyCity::FireTurret(int type, int x, int y)
 {
-	if
+	int fx = x - 10, fy = y - 10,
+		lx = x + 10, ly = y + 10;
+
+	for (int i = fx; i != lx; i++) {
+		for (int j = fy; j != ly; j++) {
+			if (type == TURRET && grid[i][j].getType() == DINO) {
+
+			}
+			else if (type == DINO && grid[i][j].getType() == TURRET) {
+
+			}
+		}
+	}
+		
 }
 
 
@@ -290,6 +303,16 @@ void FroggyCity::PlayScreen()
 		for (int j = 0; j < NUM_GRID_Y; j++)
 		{
 			grid[i][j].updateEverything();
+
+			if (grid[i][j].getType() == TURRET) 
+			{
+				FireTurret(TURRET, i, j);
+			}
+
+			if (grid[i][j].getType() == DINO)
+			{
+				FireTurret(DINO, i, j);
+			}
 		}
 	}
 
