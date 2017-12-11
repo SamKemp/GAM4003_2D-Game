@@ -264,8 +264,7 @@ void FroggyCity::onMousePressed()
 {
 	if(gameState == MENU)
 	{
-		//if (mouseX > 614 && mouseX < 974 && mouseY > 497 && mouseY < 634)
-		if (mouseX > rand() % 1920 && mouseX < rand() % 1920 && mouseY > rand() % 1080 && mouseY < rand() % 1080)
+		if (mouseX > 614 && mouseX < 974 && mouseY > 497 && mouseY < 634)
 		{
 			gameState = SETUP;
 			SetupScreen();
