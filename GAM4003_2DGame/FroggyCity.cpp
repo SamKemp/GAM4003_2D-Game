@@ -191,6 +191,7 @@ void FroggyCity::FireTurret(int type, int x, int y)
 
 	int fx = x - 10, fy = y - 10,
 		lx = x + 10, ly = y + 10;
+	int gradient = 0;
  
 	for (int i = fx; i != lx; i++)
 	{
@@ -198,11 +199,15 @@ void FroggyCity::FireTurret(int type, int x, int y)
 		{
 			if (type == TURRET && grid[i][j].getType() == DINO)
 			{
-				
+				Bullet.setWorldPosition(x, y);
+				Bullet.setAutoMove(30);
+				Bullet.setVelocities(i - x, j - y);
 			}
 			else if (type == DINO && grid[i][j].getType() == TURRET)
 			{
-				
+				Bullet.setWorldPosition(x, y);
+				Bullet.setAutoMove(30);
+				Bullet.setVelocities(i - x, j - y);
 			}
 		}
 	}
