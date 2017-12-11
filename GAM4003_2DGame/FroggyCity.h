@@ -6,7 +6,13 @@
 const int NUM_GRID_X = 60, NUM_GRID_Y = 34;
 
 // Game States
-const int MENU = 1, SETUP = 2, TUTORIAL = 3, PLAY = 4, PAUSE = 5, END = 6;
+const int MENU = 1,
+			SETUP = 2,
+			TUTORIAL = 3,
+			PLAY = 4,
+			PAUSE = 5,
+			END = 6;
+// Grid Types
 const int GRASS = 0,
 			VERT_ROAD = 1,
 			HOR_ROAD = 2,
