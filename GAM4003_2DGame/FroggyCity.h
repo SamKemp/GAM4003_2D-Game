@@ -1,12 +1,12 @@
 #pragma once
 
 #include "GameBase.h"
+#include "json.hpp"
 
+const int NUM_GRID_X = 60, NUM_GRID_Y = 34;
 
-const int NUM_GRID_X = 60;
-const int NUM_GRID_Y = 34;
-const int MAX_BUILD_TIME = 5;
-
+// Game States
+const int MENU = 1, SETUP = 2, TUTORIAL = 3, PLAY = 4, PAUSE = 5, END = 6;
 
 class FroggyCity :
 	public GameBase
@@ -15,6 +15,7 @@ public:
 	FroggyCity();
 	~FroggyCity();
 	void setup();
+	void setVariables();
 	void logic();
 	void draw();
 	void showStatus();
@@ -27,24 +28,48 @@ public:
 	void onWave();
 	void onBuild();
 	void onPause();
+	void spawnDino(int spawnFrom);
+	void spawnFrog(int count);
 
 	// No touchy
+	void MenuScreen();
+	void SetupScreen();
+	void TutorialScreen();
+	void PlayScreen();
+	void PauseScreen();
+	void EndScreen();
+
+	// Don't look, it should be shot
 	void ChangeType(int type, int x, int y);
 	void Map1();
+
+	// Defo no touch
+	// Code for Highscore website
+	void SaveHighScore(string username);
 
 // We're not sure touch?
 private:
 
-	float Bar;
-	float Money;
-	int Wave, Population, slainDinos, buildTimer;
+	float Bar,
+		  Money;
+	int SpriteHeight = 32,
+		SpriteWidth = 32,
+		Wave,
+		Population,
+		slainDinos,
+		buildTimer,
+		Timer = 0,
+		num_buildings = 0,
+		num_dinos = -1,
+		num_spawn_dinos,
+		MAX_BUILD_TIME,
+		_DinosPerRound,
+		gameState;
+	bool runTimer = true,
+		canBuild = true;
+	string data;
 
 	UBSprite ** grid;
 	UBSprite UI_Building;
 	UBSprite UI_Turret;
-	
-	float roadLength;
-	float PREVroadLength;
-	float barLength;
-	float PREVbarLength;
 };

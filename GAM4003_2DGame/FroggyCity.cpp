@@ -1,13 +1,34 @@
 #include "FroggyCity.h"
 
-int SpriteHeight = 32;
-int SpriteWidth = 32;
+// ***************************************************
+// **************** Global Game Settings *************
+// ***************************************************
+void FroggyCity::setVariables()
+{
+	// Sets the multiplier for the number of dinos each wave
+	_DinosPerRound = 10;
 
-int Timer = 0;
-int num_buildings = 0;
-int num_dinos = -1;
-bool runTimer = true;
-bool canBuild = true;
+	// Sets the length of time the player has to build (in seconds)
+	MAX_BUILD_TIME = 60;
+
+	// Sets the starting monies
+	Money = 100.0f;
+
+	// Sets the starting population
+	Population = 0;
+
+	// Sets the starting wave number
+	Wave = 0;
+
+	// Sets the starting number of slain dinos
+	slainDinos = 0;
+
+	// Sets the build timer to the MAX_BUILD_TIME
+	buildTimer = MAX_BUILD_TIME;
+}
+// ***************************************************
+// ************************ END **********************
+// ***************************************************
 
 FroggyCity::FroggyCity(void)
 {
@@ -22,11 +43,13 @@ FroggyCity::~FroggyCity(void)
 
 void FroggyCity::setup()
 {
+	gameState = MENU;
+
 	// Dynamic creaton of sprite
-	grid = new UBSprite*[NUM_GRID_X];
+	grid = new UBSprite*[NUM_GRID_X]; // grid[60]
 	for(int i = 0; i < NUM_GRID_X;i++)
 	{
-		grid[i] = new UBSprite[NUM_GRID_Y];
+		grid[i] = new UBSprite[NUM_GRID_Y]; // grid[60][34]
 	}
 
 	// Set seed for Random based on the current time
@@ -51,18 +74,12 @@ void FroggyCity::setup()
 	UI_Turret.setImage("images/Turret.png");
 	UI_Turret.setWorldPositionX(((width/2)-300) + 150);
 	UI_Turret.setWorldPositionY(height - 230);
-	
-	Money = 100.0f;
-	Population = 0;
-	Wave = 0;
-	slainDinos = 0;
-	buildTimer = MAX_BUILD_TIME;
 
 	Timer = time(NULL) + 1;
 
-	Map1();
+	setVariables();
 
-	onBuild();
+	
 }
 
 void FroggyCity::logic()
@@ -74,6 +91,13 @@ void FroggyCity::logic()
 			Timer = time(NULL) + 1;
 			buildTimer--;
 		}
+	}
+
+	if (num_spawn_dinos > 0)
+	{
+		spawnDino();
+		num_dinos++;
+		num_spawn_dinos--;
 	}
 
 	if(buildTimer == -1)
@@ -98,9 +122,10 @@ void FroggyCity::onWave()
 
 	// Stop Build actions
 	canBuild = false;
-	// Spawn Dinos
 
-	num_dinos = Wave * 10;
+	// Spawn Dinos
+	num_spawn_dinos = Wave * _DinosPerRound;
+	num_dinos = 0;
 	cout << "Set dinos: " << num_dinos << endl;
 }
 
@@ -115,22 +140,59 @@ void FroggyCity::onBuild()
 	canBuild = true;
 }
 
-void FroggyCity::draw()
+void FroggyCity::spawnDino(int spawnFrom)
 {
-	for (int i = 0; i < NUM_GRID_X; i++)
-	{
-		for (int j = 0; j < NUM_GRID_Y; j++)
-		{
-			grid[i][j].updateEverything();
-		}
+	int x = 0, y = 0;
+
+	switch(spawnFrom){
+		case 1:
+			x = 22;
+			y = 1;
+			break;
+		case 2:
+			x = 22;
+			y = 1;
+			break;
+		case 3:
+			x = 22;
+			y = 1;
+			break;
+		case 4:
+			x = 22;
+			y = 1;
+			break;
 	}
 
-	// UI_Building update
-	UI_Building.updateEverything();
-	// UI_Turret update
-	UI_Turret.updateEverything();
+	//Some code here
+}
+void FroggyCity::spawnFrog(int count)
+{
+	//Some code here
+}
 
-    showStatus();
+void FroggyCity::draw()
+{
+	switch(gameState)
+	{
+		case MENU:
+			MenuScreen();
+			break;
+		case SETUP:
+			SetupScreen();
+			break;
+		case TUTORIAL:
+			TutorialScreen();
+			break;
+		case PLAY:
+			PlayScreen();
+			break;
+		case PAUSE:
+			PauseScreen();
+			break;
+		case END:
+			EndScreen();
+			break;
+	}
 }
 
 void FroggyCity::showStatus()
@@ -185,7 +247,79 @@ void FroggyCity::onMousePressed()
 	}
 }
 
-// Should't need to look at
+
+// No touchy
+
+void FroggyCity::MenuScreen()
+{
+	for (int i = 0; i < NUM_GRID_X; i++)
+	{
+		for (int j = 0; j < NUM_GRID_Y; j++)
+		{
+			ChangeType(10, i, j);
+		}
+	}
+
+	setBackground("images/MenuScreen.png");
+}
+
+void FroggyCity::SetupScreen()
+{
+	// Fill the map
+	Map1();
+
+	//Start the game
+	onBuild();
+}
+
+void FroggyCity::PlayScreen()
+{
+	for (int i = 0; i < NUM_GRID_X; i++)
+	{
+		for (int j = 0; j < NUM_GRID_Y; j++)
+		{
+			grid[i][j].updateEverything();
+		}
+	}
+
+	// UI_Building update
+	UI_Building.updateEverything();
+	// UI_Turret update
+	UI_Turret.updateEverything();
+
+    showStatus();
+}
+
+void FroggyCity::PauseScreen()
+{
+
+}
+
+void FroggyCity::EndScreen()
+{
+	for (int i = 0; i < NUM_GRID_X; i++)
+	{
+		for (int j = 0; j < NUM_GRID_Y; j++)
+		{
+			ChangeType(10, i, j);
+		}
+	}
+
+	setBackground("images/EndScreen.png");
+}
+
+// Types Index
+// 0 = Grass
+// 1 = Road Vert
+// 2 = Road Hor
+// 3 = Road Cross
+// 4 = Frog
+// 5 = Dino
+// 6 = Turret
+// 7 = Building
+// 8 = Bar
+// 9 = Plot
+// 10 = Transparent
 
 void FroggyCity::ChangeType(int type, int i, int j)
 {
@@ -708,6 +842,13 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
 		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
 	}
+	else if (type == 10)
+	{
+		grid[i][j].setImage("images/grid/empty.png");
+		grid[i][j].setTransparentColour(255, 255, 255);
+		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
+		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
+	}
 }
 
 void FroggyCity::Map1()
@@ -746,4 +887,11 @@ void FroggyCity::Map1()
 			else if(j > (NUM_GRID_Y - 10)) { ChangeType(8, i, j); }
 		}
 	}
+}
+
+// Defo no touch
+// Code for Highscore stuff
+void FroggyCity::SaveHighScore(string username)
+{
+	
 }
