@@ -19,7 +19,7 @@ Related docs: http://utmm.pw/signi1ffd
 - [X] Add Type Attribute to UBSprite | 04/12/2017 | 30 mins | Sam
 - [X] Implement Type Attribute | 04/12/2017 | 1 hour | Sam
 - [ ] Implement Buttons | 04/12/2017 | 1 hour | Sam
-- [ ] Finish obtaining images | 04/12/2017 | 1 hour | Patrick
+- [X] Finish obtaining images | 04/12/2017 | 1 hour | Patrick
 - [X] Implement UI | 04/12/2017 | 1 hour | Sam
 - [ ] Implement build features | 04/12/2017 | 1 hour | Sam
 - [ ] Implement Turret Math | 04/12/2017 | 1 hour | Patrick
