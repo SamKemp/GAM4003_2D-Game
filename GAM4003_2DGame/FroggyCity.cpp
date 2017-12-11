@@ -195,6 +195,12 @@ void FroggyCity::draw()
 	}
 }
 
+void FroggyCity::FireTurret()
+{
+	if
+}
+
+
 void FroggyCity::showStatus()
 {
 	print("STATUS", width - 275, height - 250);
@@ -294,18 +300,6 @@ void FroggyCity::PlayScreen()
 
     showStatus();
 }
-
-
-void FroggyCity::FireTurret()
-{
-
-}
-
-
-
-
-
-
 
 void FroggyCity::PauseScreen()
 {
