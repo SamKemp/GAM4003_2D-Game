@@ -21,7 +21,7 @@ Related docs: http://utmm.pw/signi1ffd
 - [ ] Implement Buttons | 04/12/2017 | 1 hour | Sam
 - [ ] Finish obtaining images | 04/12/2017 | 1 hour | Patrick
 - [X] Implement UI | 04/12/2017 | 1 hour | Sam
-- [ ] Implement Click and drag features | 04/12/2017 | 1 hour | Sam
+- [ ] Implement build features | 04/12/2017 | 1 hour | Sam
 - [ ] Implement Turret Math | 04/12/2017 | 1 hour | Patrick
 - [ ] Implement Dinosaur AI | 04/12/2017 | 1 hour | Sam
 - [ ] Implement Frog AI | 04/12/2017 | 1 hour | Sam
