@@ -330,7 +330,7 @@ void FroggyCity::ChangeType(int type, int i, int j)
 {
 	grid[i][j].setType(type);
 
-	if(type == 1)
+	if(type == VERT_ROAD)
 	{
 		int tmpPosX = i, tmpPosY = j;
 
@@ -359,7 +359,7 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 	}
-	else if(type == 2)
+	else if(type == HOR_ROAD)
 	{
 		int tmpPosX = i, tmpPosY = j;
 
@@ -388,7 +388,7 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 
 	}
-	else if(type == 3)
+	else if(type == CROSS_ROAD)
 	{
 		int tmpPosX, tmpPosY;
 
@@ -436,19 +436,19 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 	}
-	else if (type == 4)
+	else if (type == FROG)
 	{
 		grid[i][j].setImage("images/grid/frog.png");
 		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
 		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
 	}
-	else if (type == 5)
+	else if (type == DINO)
 	{
 		grid[i][j].setImage("images/grid/dino.png");
 		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
 		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
 	}
-	else if(type == 6)
+	else if(type == TURRET)
 	{
 		int tmpPosX, tmpPosY;
 
@@ -576,7 +576,7 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 	}
-	else if(type == 7)
+	else if(type == BUILDING)
 	{
 		int tmpPosX, tmpPosY;
 
@@ -707,13 +707,13 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		Population = Population + 6;
 		num_buildings++;
 	}
-	else if (type == 8)
+	else if (type == BAR)
 	{
 		grid[i][j].setImage("images/grid/bar.png");
 		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
 		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
 	}
-	else if(type == 9)
+	else if(type == PLOT)
 	{
 		int tmpPosX, tmpPosY;
 
@@ -841,13 +841,13 @@ void FroggyCity::ChangeType(int type, int i, int j)
 		grid[tmpPosX][tmpPosY].setWorldPositionY(0 + (SpriteHeight*tmpPosY));
 		grid[tmpPosX][tmpPosY].setWorldPositionX((float)tmpPosX*SpriteWidth);
 	}
-	else if (type == 0)
+	else if (type == GRASS)
 	{
 		grid[i][j].setImage("images/grid/grass.png");
 		grid[i][j].setWorldPositionY(0 + (SpriteHeight*j));
 		grid[i][j].setWorldPositionX((float)i*SpriteWidth);
 	}
-	else if (type == 10)
+	else if (type == TRANS)
 	{
 		grid[i][j].setImage("images/grid/empty.png");
 		grid[i][j].setTransparentColour(255, 255, 255);
