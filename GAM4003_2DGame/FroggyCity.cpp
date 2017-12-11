@@ -295,6 +295,18 @@ void FroggyCity::PlayScreen()
     showStatus();
 }
 
+
+void FroggyCity::FireTurret()
+{
+
+}
+
+
+
+
+
+
+
 void FroggyCity::PauseScreen()
 {
 
@@ -313,18 +325,6 @@ void FroggyCity::EndScreen()
 	setBackground("images/EndScreen.png");
 }
 
-// Types Index
-// 0 = Grass
-// 1 = Road Vert
-// 2 = Road Hor
-// 3 = Road Cross
-// 4 = Frog
-// 5 = Dino
-// 6 = Turret
-// 7 = Building
-// 8 = Bar
-// 9 = Plot
-// 10 = Transparent
 
 void FroggyCity::ChangeType(int type, int i, int j)
 {
