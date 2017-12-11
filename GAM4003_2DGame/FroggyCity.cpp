@@ -195,6 +195,29 @@ void FroggyCity::draw()
 	}
 }
 
+void FroggyCity::FireTurret(int type, int x, int y)
+{
+
+	int fx = x - 10, fy = y - 10,
+		lx = x + 10, ly = y + 10;
+ 
+	for (int i = fx; i != lx; i++)
+	{
+		for (int j = fy; j != ly; j++)
+		{
+			if (type == TURRET && grid[i][j].getType() == DINO)
+			{
+				
+			}
+			else if (type == DINO && grid[i][j].getType() == TURRET)
+			{
+				
+			}
+		}
+	}
+}
+
+
 void FroggyCity::showStatus()
 {
 	print("STATUS", width - 275, height - 250);
@@ -241,6 +264,7 @@ void FroggyCity::onKeyReleased()
 
 void FroggyCity::onMousePressed()
 {
+
 	if(canBuild)
 	{
 		// Building management code
@@ -284,6 +308,16 @@ void FroggyCity::PlayScreen()
 		for (int j = 0; j < NUM_GRID_Y; j++)
 		{
 			grid[i][j].updateEverything();
+
+			if (grid[i][j].getType() == TURRET) 
+			{
+				FireTurret(TURRET, i, j);
+			}
+ 
+			if (grid[i][j].getType() == DINO)
+			{
+				FireTurret(DINO, i, j);
+			}
 		}
 	}
 
@@ -300,12 +334,6 @@ void FroggyCity::FireTurret()
 {
 
 }
-
-
-
-
-
-
 
 void FroggyCity::PauseScreen()
 {
@@ -325,6 +353,9 @@ void FroggyCity::EndScreen()
 	setBackground("images/EndScreen.png");
 }
 
+// ***************************************************
+// *********** Seriously Don't Touch *****************
+// ***************************************************
 
 void FroggyCity::ChangeType(int type, int i, int j)
 {
