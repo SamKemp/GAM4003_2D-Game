@@ -7,17 +7,17 @@ const int NUM_GRID_X = 60, NUM_GRID_Y = 34;
 
 // Game States
 const int MENU = 1, SETUP = 2, TUTORIAL = 3, PLAY = 4, PAUSE = 5, END = 6;
-const int GRASS = 0;
-const int VERT_ROAD = 1;
-const int HOR_ROAD = 2;
-const int CROSS_ROAD = 3;
-const int FROG = 4;
-const int DINO = 5;
-const int TURRET = 6;
-const int BUILDING = 7;
-const int BAR = 8;
-const int PLOT = 9;
-const int TRANS = 10;
+const int GRASS = 0,
+			VERT_ROAD = 1,
+			HOR_ROAD = 2,
+			CROSS_ROAD = 3,
+			FROG = 4,
+			DINO = 5,
+			TURRET = 6,
+			BUILDING = 7,
+			BAR = 8,
+			PLOT = 9,
+			TRANS = 10;
 
 
 class FroggyCity :
